@@ -7,8 +7,7 @@ const display = require("./lib/display.js");
 require("dotenv").config();
 
 const loop = async (db) => {
-    let quit = false;
-    while (!quit) {
+    while (true) {
         let promptResult = await input.mainMenu(db);        
         switch (promptResult.mainMenu) {
             case "View All Departments":
@@ -33,7 +32,7 @@ const loop = async (db) => {
                 await input.employeeToUpdate(db);
                 break;
             case "Quit":
-                quit = true;
+                process.exit();
         }
     }
 };
