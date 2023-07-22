@@ -18,7 +18,8 @@ const loop = async (db) => {
                 display.reportEmployees(db);
                 break;
             case "View All Employees By Manager":
-                
+                await input.managerToView(db);
+                break;
             case "Add a Department":
                 await input.addDepartment(db);
                 break;
