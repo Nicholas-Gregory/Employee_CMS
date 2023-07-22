@@ -1,5 +1,3 @@
-const inquirer = require("inquirer");
-
 const database = require("./lib/database.js");
 const input = require("./lib/input.js");
 const display = require("./lib/display.js");
