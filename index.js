@@ -47,6 +47,9 @@ const loop = async (db) => {
             case "Delete an Employee":
                 await input.employeeToDelete(db);
                 break;
+            case "View Budget of a Department":
+                await input.departmentToViewBudget(db);
+                break;
             case "Quit":
                 process.exit();
         }
