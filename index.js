@@ -17,6 +17,12 @@ const loop = async (db) => {
             case "View All Employees":
                 display.reportEmployees(db);
                 break;
+            case "View All Employees By Manager":
+                await input.managerToView(db);
+                break;
+            case "View All Employees By Department":
+                await input.departmentToView(db);
+                break;
             case "Add a Department":
                 await input.addDepartment(db);
                 break;
@@ -27,7 +33,22 @@ const loop = async (db) => {
                 await input.addEmployee(db);
                 break;
             case "Update an Employee's Role":
-                await input.employeeToUpdate(db);
+                await input.employeeToUpdate(db, "role");
+                break;
+            case "Update an Employee's Manager":
+                await input.employeeToUpdate(db, "manager");
+                break;
+            case "Delete a Department":
+                await input.departmentToDelete(db);
+                break;
+            case "Delete a Role":
+                await input.roleToDelete(db);
+                break;
+            case "Delete an Employee":
+                await input.employeeToDelete(db);
+                break;
+            case "View Budget of a Department":
+                await input.departmentToViewBudget(db);
                 break;
             case "Quit":
                 process.exit();
