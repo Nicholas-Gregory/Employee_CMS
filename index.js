@@ -5,8 +5,9 @@ const display = require("./lib/display.js");
 require("dotenv").config();
 
 const loop = async (db) => {
+    setTimeout(() => console.log("\n"), 500);
     while (true) {
-        let promptResult = await input.mainMenu(db);        
+        let promptResult = await input.mainMenu(db);
         switch (promptResult.mainMenu) {
             case "View All Departments":
                 display.reportDepartments(db);
